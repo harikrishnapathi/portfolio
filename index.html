@@ -4,144 +4,158 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Harikrishna Pathi — Full-Stack & AI Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0B1426;--blue:#1A5CFF;--blue-light:#3D7BFF;--cyan:#00D4FF;--white:#F5F7FF;--muted:#8896B3;--card-bg:#111d30;--card-border:rgba(255,255,255,0.06);--green:#00E599;}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--navy:#0B1426;--blue:#1A5CFF;--blue-light:#3D7BFF;--cyan:#00D4FF;--white:#F5F7FF;--muted:#8896B3;--card:#111d30;--border:rgba(255,255,255,0.06);--green:#00E599;}
+*{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;}
+body{background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
 body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(26,92,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(26,92,255,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
 .orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;opacity:.15;}
 .orb1{width:600px;height:600px;background:var(--blue);top:-200px;right:-100px;}
-.orb2{width:400px;height:400px;background:var(--cyan);bottom:100px;left:-100px;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(11,20,38,0.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);}
+.orb2{width:400px;height:400px;background:var(--cyan);bottom:0;left:-100px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(11,20,38,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);}
 .logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--white);text-decoration:none;}
 .logo span{color:var(--blue);}
 .nav-links{display:flex;gap:28px;list-style:none;}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .2s;}
 .nav-links a:hover{color:var(--white);}
-.nav-cta{background:var(--blue)!important;color:#fff!important;padding:8px 20px;border-radius:6px;font-weight:500!important;}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:7px 18px;border-radius:6px;}
 .hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;max-width:1100px;margin:0 auto;}
-.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,229,153,.1);border:1px solid rgba(0,229,153,.25);color:var(--green);font-size:13px;padding:6px 16px;border-radius:100px;margin-bottom:28px;width:fit-content;animation:fadeUp .6s ease both;}
-.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,229,153,.1);border:1px solid rgba(0,229,153,.25);color:var(--green);font-size:13px;padding:6px 16px;border-radius:100px;margin-bottom:28px;width:fit-content;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(48px,8vw,88px);font-weight:800;line-height:1;letter-spacing:-2px;margin-bottom:12px;animation:fadeUp .6s .1s ease both;}
-.hero h1 .accent{color:var(--blue);}
-.hero-sub{font-family:'Syne',sans-serif;font-size:clamp(16px,2.5vw,26px);font-weight:500;color:var(--muted);margin-bottom:24px;animation:fadeUp .6s .2s ease both;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(44px,8vw,86px);font-weight:800;line-height:1;letter-spacing:-2px;margin-bottom:12px;}
+h1 .accent{color:var(--blue);}
+.hero-sub{font-family:'Syne',sans-serif;font-size:clamp(16px,2.5vw,24px);color:var(--muted);margin-bottom:20px;}
 .hero-sub .cyan{color:var(--cyan);}
-.hero p{font-size:17px;color:var(--muted);max-width:540px;margin-bottom:40px;animation:fadeUp .6s .3s ease both;font-weight:300;}
-.btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .6s .4s ease both;}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;}
+.hero-desc{font-size:16px;color:var(--muted);max-width:520px;margin-bottom:36px;line-height:1.75;font-weight:300;}
+.btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:all .2s;}
 .btn-p{background:var(--blue);color:#fff;}
 .btn-p:hover{background:var(--blue-light);transform:translateY(-2px);}
 .btn-o{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.15);}
-.btn-o:hover{border-color:rgba(255,255,255,.35);transform:translateY(-2px);}
-.stats{display:flex;gap:48px;margin-top:56px;padding-top:36px;border-top:1px solid rgba(255,255,255,.07);animation:fadeUp .6s .5s ease both;flex-wrap:wrap;}
-.stat-num{font-family:'Syne',sans-serif;font-size:30px;font-weight:700;letter-spacing:-1px;}
-.stat-num span{color:var(--blue);}
-.stat-lbl{font-size:12px;color:var(--muted);}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-section{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:80px 48px;}
-.sec-tag{font-size:12px;font-weight:500;color:var(--blue);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;}
-.sec-title{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-1px;margin-bottom:40px;line-height:1.15;}
+.btn-o:hover{border-color:rgba(255,255,255,.3);transform:translateY(-2px);}
+.stats{display:flex;gap:40px;margin-top:52px;padding-top:32px;border-top:1px solid rgba(255,255,255,.07);flex-wrap:wrap;}
+.stat-n{font-family:'Syne',sans-serif;font-size:28px;font-weight:700;letter-spacing:-1px;}
+.stat-n span{color:var(--blue);}
+.stat-l{font-size:12px;color:var(--muted);}
+section{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:72px 48px;}
+.stag{font-size:12px;font-weight:500;color:var(--blue);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;}
+.stitle{font-family:'Syne',sans-serif;font-size:clamp(24px,4vw,38px);font-weight:700;letter-spacing:-1px;margin-bottom:36px;line-height:1.15;}
 .skills-tbl{width:100%;border-collapse:collapse;}
 .skills-tbl tr{border-bottom:1px solid rgba(255,255,255,.05);}
 .skills-tbl tr:last-child{border-bottom:none;}
-.skills-tbl td{padding:14px 0;vertical-align:top;}
-.skills-tbl td:first-child{width:160px;color:var(--muted);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;padding-right:24px;white-space:nowrap;}
+.skills-tbl td{padding:13px 0;vertical-align:top;}
+.skills-tbl td:first-child{width:150px;color:var(--muted);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;padding-right:20px;white-space:nowrap;}
 .chips{display:flex;flex-wrap:wrap;gap:7px;}
-.chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--white);font-size:12px;padding:4px 12px;border-radius:100px;transition:all .2s;}
-.chip:hover,.chip.hi{background:rgba(26,92,255,.15);border-color:rgba(26,92,255,.4);color:#7AABFF;}
-.demos-intro{font-size:16px;color:var(--muted);max-width:600px;margin-bottom:40px;font-weight:300;line-height:1.7;}
-.demo-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
-.tab-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:13px;padding:9px 20px;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;display:flex;align-items:center;gap:8px;}
-.tab-btn:hover{border-color:rgba(26,92,255,.4);color:var(--white);}
-.tab-btn.active{background:rgba(26,92,255,.15);border-color:rgba(26,92,255,.5);color:#7AABFF;}
-.tab-btn svg{width:16px;height:16px;}
-.demo-panel{display:none;}
-.demo-panel.active{display:block;}
-.demo-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;overflow:hidden;}
-.demo-header{padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px;}
-.demo-header-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
-.demo-header h3{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--white);}
-.demo-header p{font-size:12px;color:var(--muted);}
-.demo-body{padding:24px;}
-.chat-window{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:12px;height:320px;overflow-y:auto;padding:16px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
-.chat-window::-webkit-scrollbar{width:4px;}
-.chat-window::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px;}
-.msg{max-width:80%;padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.5;}
-.msg.bot{background:rgba(26,92,255,.15);border:1px solid rgba(26,92,255,.2);color:var(--white);align-self:flex-start;border-bottom-left-radius:4px;}
-.msg.user{background:rgba(255,255,255,.08);color:var(--white);align-self:flex-end;border-bottom-right-radius:4px;}
-.msg.thinking{color:var(--muted);font-style:italic;}
-.chat-input-row{display:flex;gap:8px;}
-.chat-input-row input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:11px 16px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;}
-.chat-input-row input:focus{border-color:rgba(26,92,255,.5);}
-.chat-input-row input::placeholder{color:var(--muted);}
-.send-btn{background:var(--blue);color:#fff;border:none;padding:11px 20px;border-radius:8px;cursor:pointer;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:500;transition:background .2s;white-space:nowrap;}
-.send-btn:hover{background:var(--blue-light);}
-.send-btn:disabled{opacity:.5;cursor:not-allowed;}
-.chat-suggestions{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
-.sugg{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:12px;padding:5px 11px;border-radius:100px;cursor:pointer;transition:all .2s;}
-.sugg:hover{border-color:rgba(26,92,255,.4);color:#7AABFF;}
-.code-form{display:grid;gap:12px;margin-bottom:16px;}
-.code-form select,.code-form input{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:11px 16px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;width:100%;}
-.code-form select:focus,.code-form input:focus{border-color:rgba(26,92,255,.5);}
-.code-form select option{background:#111d30;color:var(--white);}
-.code-out{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:16px;font-family:monospace;font-size:13px;color:#7AABFF;min-height:160px;max-height:300px;overflow-y:auto;white-space:pre-wrap;word-break:break-word;line-height:1.6;}
-.code-out::-webkit-scrollbar{width:4px;}
-.code-out::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px;}
-.code-row{display:flex;gap:10px;align-items:flex-start;}
-.code-row select{width:180px;flex-shrink:0;}
-.prod-form{display:grid;gap:12px;margin-bottom:16px;}
-.prod-form input,.prod-form select,.prod-form textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:11px 16px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;width:100%;}
-.prod-form input:focus,.prod-form select:focus,.prod-form textarea:focus{border-color:rgba(26,92,255,.5);}
-.prod-form select option{background:#111d30;}
-.prod-out{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:20px;font-size:14px;color:var(--white);min-height:120px;line-height:1.7;white-space:pre-wrap;}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.resume-textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:14px;border-radius:10px;font-size:13px;font-family:'DM Sans',sans-serif;resize:vertical;min-height:110px;margin-bottom:12px;outline:none;line-height:1.6;}
-.resume-textarea:focus{border-color:rgba(26,92,255,.5);}
-.resume-job{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:11px 16px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;margin-bottom:14px;outline:none;}
-.resume-job:focus{border-color:rgba(26,92,255,.5);}
-.score-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:4px;}
-.score-bar-bg{background:rgba(255,255,255,.08);border-radius:100px;height:6px;overflow:hidden;margin-bottom:16px;}
-.score-bar-fill{height:100%;border-radius:100px;transition:width 1s ease;background:linear-gradient(90deg,var(--blue),var(--cyan));}
-.analysis-grid{display:grid;gap:10px;}
-.a-item{background:rgba(0,0,0,.2);border-radius:8px;padding:12px 16px;}
-.a-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:5px;}
-.a-val{font-size:14px;color:var(--white);line-height:1.6;}
-.out-area{position:relative;}
-.copy-btn{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:11px;padding:4px 10px;border-radius:6px;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;z-index:2;}
-.copy-btn:hover{color:var(--white);}
-.full-w{width:100%;justify-content:center;margin-bottom:14px;}
-.exp-item{display:grid;grid-template-columns:1fr 3fr;gap:32px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.05);}
-.exp-item:last-child{border-bottom:none;}
-.exp-period{font-size:13px;color:var(--muted);margin-bottom:4px;}
-.exp-co{font-size:13px;color:var(--blue);font-weight:500;}
-.exp-content h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:-.3px;}
-.exp-ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
-.exp-ul li{font-size:14px;color:var(--muted);padding-left:14px;position:relative;font-weight:300;}
-.exp-ul li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;background:var(--blue);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
-.contact-left h2{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:14px;}
-.contact-left h2 span{color:var(--blue);}
-.contact-left p{color:var(--muted);font-size:15px;font-weight:300;margin-bottom:24px;}
-.c-links{display:flex;flex-direction:column;gap:10px;}
-.c-link{display:flex;align-items:center;gap:12px;color:var(--muted);text-decoration:none;font-size:14px;transition:color .2s;padding:12px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.05);background:var(--card-bg);}
-.c-link:hover{color:var(--white);border-color:rgba(26,92,255,.3);}
-.c-link svg{width:17px;height:17px;color:var(--blue);flex-shrink:0;}
-.c-link strong{color:var(--white);margin-right:4px;}
-footer{position:relative;z-index:1;text-align:center;padding:28px 48px;border-top:1px solid rgba(255,255,255,.05);color:var(--muted);font-size:13px;}
+.chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--white);font-size:12px;padding:4px 12px;border-radius:100px;}
+.chip.hi{background:rgba(26,92,255,.15);border-color:rgba(26,92,255,.4);color:#7AABFF;}
+/* CONFIG BANNER */
+.config-banner{background:rgba(255,160,0,.08);border:1px solid rgba(255,160,0,.3);border-radius:12px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:12px;font-size:14px;color:#FFB347;}
+.config-banner svg{width:20px;height:20px;flex-shrink:0;}
+.config-banner a{color:#FFD700;text-decoration:underline;cursor:pointer;}
+/* API KEY SETUP */
+.key-setup{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;}
+.key-setup h4{font-size:14px;font-weight:600;color:var(--white);margin-bottom:8px;}
+.key-setup p{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.6;}
+.key-row{display:flex;gap:8px;}
+.key-row input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:10px 14px;border-radius:8px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;}
+.key-row input:focus{border-color:rgba(26,92,255,.5);}
+.key-row input::placeholder{color:var(--muted);}
+.key-saved{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:13px;margin-top:8px;}
+/* DEMO TABS */
+.demo-intro{font-size:15px;color:var(--muted);max-width:580px;margin-bottom:32px;line-height:1.7;font-weight:300;}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.tab{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:13px;padding:9px 18px;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;display:flex;align-items:center;gap:7px;}
+.tab:hover{border-color:rgba(26,92,255,.4);color:var(--white);}
+.tab.on{background:rgba(26,92,255,.15);border-color:rgba(26,92,255,.5);color:#7AABFF;}
+.tab svg{width:15px;height:15px;}
+.panel{display:none;}
+.panel.on{display:block;}
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.dhead{padding:18px 22px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px;}
+.dicon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.dhead h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;}
+.dhead p{font-size:12px;color:var(--muted);}
+.dbody{padding:22px;}
+/* CHAT */
+.chat-win{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:12px;height:300px;overflow-y:auto;padding:14px;margin-bottom:12px;display:flex;flex-direction:column;gap:9px;}
+.chat-win::-webkit-scrollbar{width:3px;}
+.chat-win::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px;}
+.msg{max-width:80%;padding:9px 13px;border-radius:12px;font-size:14px;line-height:1.5;}
+.msg.bot{background:rgba(26,92,255,.15);border:1px solid rgba(26,92,255,.2);align-self:flex-start;border-bottom-left-radius:3px;}
+.msg.usr{background:rgba(255,255,255,.08);align-self:flex-end;border-bottom-right-radius:3px;}
+.msg.think{color:var(--muted);font-style:italic;}
+.cinput{display:flex;gap:8px;}
+.cinput input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:10px 14px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;}
+.cinput input:focus{border-color:rgba(26,92,255,.5);}
+.cinput input::placeholder{color:var(--muted);}
+.sbtn{background:var(--blue);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:500;white-space:nowrap;}
+.sbtn:hover{background:var(--blue-light);}
+.sbtn:disabled{opacity:.5;cursor:not-allowed;}
+.suggs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.sugg{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:var(--muted);font-size:12px;padding:4px 10px;border-radius:100px;cursor:pointer;transition:all .2s;}
+.sugg:hover{color:#7AABFF;border-color:rgba(26,92,255,.4);}
+/* CODE */
+.crow{display:flex;gap:8px;margin-bottom:12px;}
+.crow select{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:10px 14px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;width:170px;flex-shrink:0;}
+.crow select option{background:#111d30;}
+.crow input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:10px 14px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;}
+.crow input::placeholder{color:var(--muted);}
+.code-out{background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:14px;font-family:monospace;font-size:13px;color:#7AABFF;min-height:150px;max-height:280px;overflow-y:auto;white-space:pre-wrap;word-break:break-word;line-height:1.6;position:relative;}
+/* PRODUCT */
+.pgrid{display:grid;gap:10px;margin-bottom:14px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.fi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:10px 14px;border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;width:100%;}
+.fi:focus{border-color:rgba(26,92,255,.5);}
+.fi::placeholder{color:var(--muted);}
+.fi option{background:#111d30;}
+.pout{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:18px;font-size:14px;min-height:110px;line-height:1.7;white-space:pre-wrap;}
+/* RESUME */
+.rtxt{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:12px 14px;border-radius:10px;font-size:13px;font-family:'DM Sans',sans-serif;resize:vertical;min-height:100px;margin-bottom:10px;outline:none;line-height:1.6;}
+.rtxt:focus{border-color:rgba(26,92,255,.5);}
+.slbl{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:4px;}
+.sbg{background:rgba(255,255,255,.08);border-radius:100px;height:6px;overflow:hidden;margin-bottom:14px;}
+.sfill{height:100%;border-radius:100px;transition:width 1s ease;}
+.agrid{display:grid;gap:9px;}
+.ai{background:rgba(0,0,0,.2);border-radius:8px;padding:11px 14px;}
+.al{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:4px;}
+.av{font-size:14px;line-height:1.6;}
+/* SHARED */
+.outbox{position:relative;}
+.cbtn{position:absolute;top:9px;right:9px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:11px;padding:3px 9px;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;z-index:2;}
+.cbtn:hover{color:var(--white);}
+.fw{width:100%;justify-content:center;margin-bottom:12px;}
+/* EXP */
+.ei{display:grid;grid-template-columns:1fr 3fr;gap:28px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.ei:last-child{border-bottom:none;}
+.ep{font-size:13px;color:var(--muted);}
+.eco{font-size:13px;color:var(--blue);font-weight:500;margin-top:3px;}
+.ei h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:9px;letter-spacing:-.3px;}
+.eul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.eul li{font-size:14px;color:var(--muted);padding-left:13px;position:relative;font-weight:300;line-height:1.5;}
+.eul li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--blue);}
+/* CONTACT */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+.cleft h2{font-family:'Syne',sans-serif;font-size:clamp(24px,4vw,42px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:12px;}
+.cleft h2 span{color:var(--blue);}
+.cleft p{color:var(--muted);font-size:15px;font-weight:300;margin-bottom:22px;line-height:1.7;}
+.clinks{display:flex;flex-direction:column;gap:9px;}
+.cl{display:flex;align-items:center;gap:11px;color:var(--muted);text-decoration:none;font-size:14px;padding:11px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.05);background:var(--card);transition:all .2s;}
+.cl:hover{color:var(--white);border-color:rgba(26,92,255,.3);}
+.cl svg{width:16px;height:16px;color:var(--blue);flex-shrink:0;}
+.cl strong{color:var(--white);margin-right:4px;}
+footer{position:relative;z-index:1;text-align:center;padding:24px;border-top:1px solid rgba(255,255,255,.05);color:var(--muted);font-size:13px;}
 footer a{color:var(--blue);text-decoration:none;}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.visible{opacity:1;transform:none;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s;}
+.reveal.v{opacity:1;transform:none;}
 .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}
-@media(max-width:768px){nav{padding:14px 20px;}.nav-links{display:none;}.hero,section{padding:80px 20px 48px;}.contact-grid,.exp-item{grid-template-columns:1fr;gap:16px;}.two-col{grid-template-columns:1fr;}.code-row{flex-direction:column;}.code-row select{width:100%;}}
+@media(max-width:768px){nav{padding:14px 16px;}.nav-links{display:none;}.hero,section{padding:76px 16px 40px;}.cgrid,.ei{grid-template-columns:1fr;gap:14px;}.two,.crow{grid-template-columns:1fr;}.crow select{width:100%;}}
 </style>
 </head>
 <body>
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
+<div class="orb orb1"></div><div class="orb orb2"></div>
 <nav>
   <a class="logo" href="#">HK<span>.</span></a>
   <ul class="nav-links">
@@ -153,148 +167,113 @@ footer a{color:var(--blue);text-decoration:none;}
 </nav>
 
 <div class="hero">
-  <div class="pill"><span class="pulse"></span>Available for remote work — full-time</div>
+  <div class="pill"><span class="dot"></span>Available for remote work — full-time</div>
   <h1>Harikrishna<br><span class="accent">Pathi</span></h1>
   <p class="hero-sub">Full-Stack Developer &amp; <span class="cyan">AI Integration Engineer</span></p>
-  <p>I build scalable web applications and integrate AI into real products — REST APIs, real-time systems, and AI-powered tools. 2+ years delivering for international clients, fully remote.</p>
+  <p class="hero-desc">I build scalable web apps and integrate AI into real products — REST APIs, real-time systems, and AI-powered tools. 2+ years delivering for international clients, fully remote.</p>
   <div class="btns">
     <a href="#demos" class="btn btn-p">Try live AI demos &rarr;</a>
     <a href="#contact" class="btn btn-o">Get in touch</a>
   </div>
   <div class="stats">
-    <div class="stat"><div class="stat-num">10<span>+</span></div><div class="stat-lbl">Projects delivered</div></div>
-    <div class="stat"><div class="stat-num">40<span>%</span></div><div class="stat-lbl">API latency reduced</div></div>
-    <div class="stat"><div class="stat-num">500<span>+</span></div><div class="stat-lbl">Concurrent users</div></div>
-    <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">Live AI tools below</div></div>
+    <div><div class="stat-n">10<span>+</span></div><div class="stat-l">Projects delivered</div></div>
+    <div><div class="stat-n">40<span>%</span></div><div class="stat-l">API latency reduced</div></div>
+    <div><div class="stat-n">500<span>+</span></div><div class="stat-l">Concurrent users</div></div>
+    <div><div class="stat-n">4</div><div class="stat-l">Live AI tools below</div></div>
   </div>
 </div>
 
 <section id="skills">
-  <div class="sec-tag reveal">Technical Skills</div>
-  <h2 class="sec-title reveal">What I work with</h2>
+  <div class="stag reveal">Technical Skills</div>
+  <h2 class="stitle reveal">What I work with</h2>
   <table class="skills-tbl">
     <tr class="reveal"><td>Languages</td><td><div class="chips"><span class="chip hi">Python</span><span class="chip hi">TypeScript</span><span class="chip hi">JavaScript</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">SQL</span></div></td></tr>
     <tr class="reveal d1"><td>Frontend</td><td><div class="chips"><span class="chip hi">React.js</span><span class="chip hi">Vue.js 3</span><span class="chip">Next.js</span><span class="chip">Angular</span><span class="chip">Tailwind CSS</span></div></td></tr>
     <tr class="reveal d2"><td>Backend</td><td><div class="chips"><span class="chip hi">Node.js</span><span class="chip hi">NestJS</span><span class="chip hi">FastAPI</span><span class="chip">Express.js</span><span class="chip">GraphQL</span><span class="chip">WebSockets</span></div></td></tr>
-    <tr class="reveal"><td>AI & APIs</td><td><div class="chips"><span class="chip hi">Claude API</span><span class="chip hi">OpenAI API</span><span class="chip">LangChain</span><span class="chip">AI Integration</span><span class="chip">Prompt Engineering</span></div></td></tr>
+    <tr class="reveal"><td>AI & APIs</td><td><div class="chips"><span class="chip hi">Groq API</span><span class="chip hi">Claude API</span><span class="chip hi">OpenAI API</span><span class="chip">LangChain</span><span class="chip">Prompt Engineering</span></div></td></tr>
     <tr class="reveal d1"><td>Databases</td><td><div class="chips"><span class="chip hi">PostgreSQL</span><span class="chip hi">MongoDB</span><span class="chip hi">Redis</span><span class="chip">MySQL</span><span class="chip">TypeORM</span></div></td></tr>
     <tr class="reveal d2"><td>Cloud & DevOps</td><td><div class="chips"><span class="chip hi">AWS</span><span class="chip hi">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Nginx</span><span class="chip">CI/CD</span></div></td></tr>
   </table>
 </section>
 
 <section id="demos">
-  <div class="sec-tag reveal">Interactive</div>
-  <h2 class="sec-title reveal">Live AI Tools — Try them now</h2>
-  <p class="demos-intro reveal">These are real working AI-powered tools. Every tool calls a live AI API. This is exactly the kind of thing I can build into your product.</p>
-  <div class="demo-tabs reveal">
-    <button class="tab-btn active" onclick="switchTab('chatbot',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>AI Support Chatbot
-    </button>
-    <button class="tab-btn" onclick="switchTab('codegen',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Code Generator
-    </button>
-    <button class="tab-btn" onclick="switchTab('product',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Product Writer
-    </button>
-    <button class="tab-btn" onclick="switchTab('resume',this)">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Resume Analyzer
-    </button>
+  <div class="stag reveal">Interactive</div>
+  <h2 class="stitle reveal">Live AI Tools — Try them now</h2>
+  <p class="demo-intro reveal">Real working AI-powered tools. This is exactly what I can build into your product.</p>
+
+  <!-- API KEY SETUP -->
+  <div class="key-setup reveal" id="key-setup">
+    <h4>🔑 One-time setup — Enter your free Groq API key</h4>
+    <p>Get a free key at <strong>console.groq.com</strong> → Sign up → API Keys → Create Key (takes 2 minutes, no credit card)</p>
+    <div class="key-row">
+      <input type="password" id="api-key-input" placeholder="Paste your gsk_... key here">
+      <button class="btn btn-p" onclick="saveKey()">Save Key</button>
+    </div>
+    <div class="key-saved" id="key-saved" style="display:none">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      Key saved! All 4 tools are now active.
+    </div>
+  </div>
+
+  <div class="tabs reveal">
+    <button class="tab on" onclick="switchTab('chat',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>AI Chatbot</button>
+    <button class="tab" onclick="switchTab('code',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Code Generator</button>
+    <button class="tab" onclick="switchTab('prod',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Product Writer</button>
+    <button class="tab" onclick="switchTab('res',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Resume Analyzer</button>
   </div>
 
   <!-- CHATBOT -->
-  <div class="demo-panel active" id="panel-chatbot">
-    <div class="demo-card">
-      <div class="demo-header">
-        <div class="demo-header-icon" style="background:rgba(26,92,255,.15)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3D7BFF" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div><h3>AI Support Chatbot</h3><p>Ask about skills, pricing, availability — powered by AI</p></div>
-      </div>
-      <div class="demo-body">
-        <div class="chat-suggestions" id="chat-suggs">
-          <span class="sugg" onclick="useSugg(this)">What services do you offer?</span>
-          <span class="sugg" onclick="useSugg(this)">How much does it cost to hire you?</span>
-          <span class="sugg" onclick="useSugg(this)">How fast can you deliver?</span>
-          <span class="sugg" onclick="useSugg(this)">Do you work with startups?</span>
-        </div>
-        <div class="chat-window" id="chat-window">
-          <div class="msg bot">👋 Hi! I'm Hari's AI assistant. Ask me anything about his skills, availability, or how he can help your project!</div>
-        </div>
-        <div class="chat-input-row">
-          <input type="text" id="chat-input" placeholder="Ask about skills, pricing, availability..." onkeydown="if(event.key==='Enter')sendChat()">
-          <button class="send-btn" id="chat-send" onclick="sendChat()">Send</button>
-        </div>
+  <div class="panel on" id="panel-chat">
+    <div class="dcard">
+      <div class="dhead"><div class="dicon" style="background:rgba(26,92,255,.15)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3D7BFF" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><h3>AI Support Chatbot</h3><p>Ask about skills, pricing, availability</p></div></div>
+      <div class="dbody">
+        <div class="suggs" id="suggs"><span class="sugg" onclick="useS(this)">What services do you offer?</span><span class="sugg" onclick="useS(this)">How much does it cost?</span><span class="sugg" onclick="useS(this)">How fast can you deliver?</span><span class="sugg" onclick="useS(this)">Do you work with startups?</span></div>
+        <div class="chat-win" id="chat-win"><div class="msg bot">👋 Hi! I'm Hari's AI assistant. Ask me anything about his skills, availability, or how he can help your project!</div></div>
+        <div class="cinput"><input type="text" id="ci" placeholder="Ask about skills, pricing, availability..." onkeydown="if(event.key==='Enter')sendChat()"><button class="sbtn" id="csend" onclick="sendChat()">Send</button></div>
       </div>
     </div>
   </div>
 
   <!-- CODE GEN -->
-  <div class="demo-panel" id="panel-codegen">
-    <div class="demo-card">
-      <div class="demo-header">
-        <div class="demo-header-icon" style="background:rgba(0,229,153,.1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E599" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <div><h3>AI Code Generator</h3><p>Describe what you need — get production-ready code instantly</p></div>
-      </div>
-      <div class="demo-body">
-        <div class="code-form">
-          <div class="code-row">
-            <select id="code-lang">
-              <option>JavaScript</option><option>Python</option><option>TypeScript</option>
-              <option>React JSX</option><option>Node.js</option><option>SQL</option>
-            </select>
-            <input type="text" id="code-prompt" placeholder="e.g. JWT login endpoint with refresh tokens, or React search bar with debounce...">
-          </div>
-        </div>
-        <button class="btn btn-p full-w" onclick="generateCode()" id="code-btn">Generate Code &rarr;</button>
-        <div class="out-area">
-          <button class="copy-btn" onclick="copyOut('code-out')">Copy</button>
-          <div class="code-out" id="code-out">// Your generated code will appear here...</div>
-        </div>
+  <div class="panel" id="panel-code">
+    <div class="dcard">
+      <div class="dhead"><div class="dicon" style="background:rgba(0,229,153,.1)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#00E599" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><h3>AI Code Generator</h3><p>Describe what you need — get production-ready code</p></div></div>
+      <div class="dbody">
+        <div class="crow"><select id="clang"><option>JavaScript</option><option>Python</option><option>TypeScript</option><option>React JSX</option><option>Node.js</option><option>SQL</option></select><input type="text" id="cprompt" placeholder="e.g. JWT login API endpoint, React search bar with debounce..."></div>
+        <button class="btn btn-p fw" onclick="genCode()" id="cbtn">Generate Code &rarr;</button>
+        <div class="outbox"><button class="cbtn" onclick="cp('cout')">Copy</button><div class="code-out" id="cout">// Your generated code will appear here...</div></div>
       </div>
     </div>
   </div>
 
   <!-- PRODUCT -->
-  <div class="demo-panel" id="panel-product">
-    <div class="demo-card">
-      <div class="demo-header">
-        <div class="demo-header-icon" style="background:rgba(0,212,255,.1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-        <div><h3>AI Product Description Writer</h3><p>Generate compelling product copy in seconds</p></div>
-      </div>
-      <div class="demo-body">
-        <div class="prod-form">
-          <div class="two-col">
-            <input type="text" id="prod-name" placeholder="Product name (e.g. Wireless Earbuds Pro)">
-            <input type="text" id="prod-category" placeholder="Category (e.g. Electronics, Fashion)">
-          </div>
-          <textarea id="prod-features" placeholder="Key features (e.g. 30hr battery, noise cancelling, waterproof)" rows="2" style="resize:vertical;"></textarea>
-          <div class="two-col">
-            <select id="prod-tone"><option value="professional">Professional</option><option value="fun and playful">Fun & Playful</option><option value="luxury and premium">Luxury & Premium</option><option value="simple and clear">Simple & Clear</option></select>
-            <select id="prod-platform"><option value="Amazon listing">Amazon Listing</option><option value="Shopify store">Shopify Store</option><option value="Instagram caption">Instagram Caption</option><option value="general e-commerce">General E-commerce</option></select>
-          </div>
+  <div class="panel" id="panel-prod">
+    <div class="dcard">
+      <div class="dhead"><div class="dicon" style="background:rgba(0,212,255,.1)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><h3>Product Description Writer</h3><p>Generate compelling product copy instantly</p></div></div>
+      <div class="dbody">
+        <div class="pgrid">
+          <div class="two"><input class="fi" type="text" id="pname" placeholder="Product name (e.g. Wireless Earbuds Pro)"><input class="fi" type="text" id="pcat" placeholder="Category (e.g. Electronics)"></div>
+          <textarea class="fi" id="pfeats" rows="2" placeholder="Key features (e.g. 30hr battery, noise cancelling)" style="resize:vertical"></textarea>
+          <div class="two"><select class="fi" id="ptone"><option value="professional">Professional</option><option value="fun and playful">Fun & Playful</option><option value="luxury">Luxury & Premium</option><option value="simple">Simple & Clear</option></select><select class="fi" id="pplat"><option value="Amazon">Amazon Listing</option><option value="Shopify">Shopify Store</option><option value="Instagram">Instagram Caption</option><option value="E-commerce">General E-commerce</option></select></div>
         </div>
-        <button class="btn btn-p full-w" onclick="generateProduct()" id="prod-btn">Generate Description &rarr;</button>
-        <div class="out-area">
-          <button class="copy-btn" onclick="copyOut('prod-out')">Copy</button>
-          <div class="prod-out" id="prod-out" style="color:var(--muted)">Your product description will appear here...</div>
-        </div>
+        <button class="btn btn-p fw" onclick="genProd()" id="pbtn">Generate Description &rarr;</button>
+        <div class="outbox"><button class="cbtn" onclick="cp('pout')">Copy</button><div class="pout" id="pout" style="color:var(--muted)">Your product description will appear here...</div></div>
       </div>
     </div>
   </div>
 
   <!-- RESUME -->
-  <div class="demo-panel" id="panel-resume">
-    <div class="demo-card">
-      <div class="demo-header">
-        <div class="demo-header-icon" style="background:rgba(255,140,50,.1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFA032" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div><h3>AI Resume Analyzer</h3><p>Paste a resume — get ATS score &amp; improvement tips</p></div>
-      </div>
-      <div class="demo-body">
-        <textarea class="resume-textarea" id="resume-input" placeholder="Paste resume text here... (name, skills, experience, education)"></textarea>
-        <input class="resume-job" type="text" id="resume-job" placeholder="Target job title (e.g. Senior React Developer, Python Backend Engineer)">
-        <button class="btn btn-p full-w" onclick="analyzeResume()" id="resume-btn">Analyze Resume &rarr;</button>
-        <div id="resume-out" style="display:none">
-          <div class="score-label"><span>ATS Score</span><span id="score-text">0%</span></div>
-          <div class="score-bar-bg"><div class="score-bar-fill" id="score-fill" style="width:0%"></div></div>
-          <div class="analysis-grid" id="analysis-grid"></div>
+  <div class="panel" id="panel-res">
+    <div class="dcard">
+      <div class="dhead"><div class="dicon" style="background:rgba(255,140,50,.1)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFA032" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><h3>AI Resume Analyzer</h3><p>Get ATS score &amp; improvement tips</p></div></div>
+      <div class="dbody">
+        <textarea class="rtxt" id="rtxt" placeholder="Paste resume text here..."></textarea>
+        <input class="fi" style="margin-bottom:12px" type="text" id="rjob" placeholder="Target job title (e.g. Senior React Developer)">
+        <button class="btn btn-p fw" onclick="analyzeRes()" id="rbtn">Analyze Resume &rarr;</button>
+        <div id="rout" style="display:none">
+          <div class="slbl"><span>ATS Score</span><span id="stxt">0%</span></div>
+          <div class="sbg"><div class="sfill" id="sfill" style="width:0%"></div></div>
+          <div class="agrid" id="agrid"></div>
         </div>
       </div>
     </div>
@@ -302,174 +281,172 @@ footer a{color:var(--blue);text-decoration:none;}
 </section>
 
 <section id="experience">
-  <div class="sec-tag reveal">Work History</div>
-  <h2 class="sec-title reveal">Experience</h2>
+  <div class="stag reveal">Work History</div>
+  <h2 class="stitle reveal">Experience</h2>
   <div>
-    <div class="exp-item reveal">
-      <div><div class="exp-period">2023 — Present</div><div class="exp-co">Independent / Remote</div></div>
-      <div class="exp-content"><h3>Full-Stack Developer — Freelance</h3>
-        <ul class="exp-ul">
-          <li>Delivered 10+ custom web applications for international clients across e-commerce, SaaS, and logistics.</li>
-          <li>Reduced API response times by 40% through PostgreSQL query optimization and Redis caching.</li>
-          <li>Deployed Docker-containerized services on AWS (EC2, S3, RDS) achieving 99.9% uptime SLAs.</li>
-          <li>Built CI/CD pipelines with GitHub Actions; conducted code reviews and wrote technical documentation.</li>
-        </ul>
-      </div>
+    <div class="ei reveal">
+      <div><div class="ep">2023 — Present</div><div class="eco">Independent / Remote</div></div>
+      <div><h3>Full-Stack Developer — Freelance</h3><ul class="eul"><li>Delivered 10+ custom web applications for international clients across e-commerce, SaaS, and logistics.</li><li>Reduced API response times by 40% through PostgreSQL query optimization and Redis caching.</li><li>Deployed Docker-containerized services on AWS (EC2, S3, RDS) achieving 99.9% uptime SLAs.</li><li>Built CI/CD pipelines with GitHub Actions; conducted code reviews and wrote documentation.</li></ul></div>
     </div>
-    <div class="exp-item reveal d1">
-      <div><div class="exp-period">2023 — 2024</div><div class="exp-co">Self-Directed / Remote</div></div>
-      <div class="exp-content"><h3>Transaction Review Analyst — Freelance</h3>
-        <ul class="exp-ul">
-          <li>Reviewed high-volume transaction claims using analytical judgment to evaluate evidence.</li>
-          <li>Maintained detailed case notes and communicated findings to stakeholders via written reports.</li>
-        </ul>
-      </div>
+    <div class="ei reveal d1">
+      <div><div class="ep">2023 — 2024</div><div class="eco">Self-Directed / Remote</div></div>
+      <div><h3>Transaction Review Analyst — Freelance</h3><ul class="eul"><li>Reviewed high-volume transaction claims using analytical judgment to evaluate evidence.</li><li>Maintained detailed case notes and communicated findings via structured written reports.</li></ul></div>
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="contact-grid">
-    <div class="reveal">
-      <div class="sec-tag">Contact</div>
+  <div class="cgrid">
+    <div class="cleft reveal">
+      <div class="stag">Contact</div>
       <h2>Let's build<br>something <span>great.</span></h2>
       <p>Immediately available for full-time remote positions or freelance contracts. US/EU/India clients welcome. I respond within 24 hours.</p>
       <a href="mailto:Harikrishnapathi02@gmail.com" class="btn btn-p" style="width:fit-content">Send me an email &rarr;</a>
     </div>
-    <div class="reveal d1">
-      <div class="c-links">
-        <a href="mailto:Harikrishnapathi02@gmail.com" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><strong>Email</strong>Harikrishnapathi02@gmail.com</a>
-        <a href="tel:+919550446819" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.17 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 5.68 5.68l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg><strong>Phone</strong>+91 9550446819</a>
-        <a href="https://linkedin.com/in/harikrishna-pathi-9a7b29233" target="_blank" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><strong>LinkedIn</strong>harikrishna-pathi-9a7b29233</a>
-        <a href="https://github.com/harikrishnapathi" target="_blank" class="c-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><strong>GitHub</strong>github.com/harikrishnapathi</a>
-      </div>
+    <div class="clinks reveal d1">
+      <a href="mailto:Harikrishnapathi02@gmail.com" class="cl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><strong>Email</strong>Harikrishnapathi02@gmail.com</a>
+      <a href="tel:+919550446819" class="cl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.17 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 5.68 5.68l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg><strong>Phone</strong>+91 9550446819</a>
+      <a href="https://linkedin.com/in/harikrishna-pathi-9a7b29233" target="_blank" class="cl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><strong>LinkedIn</strong>harikrishna-pathi-9a7b29233</a>
+      <a href="https://github.com/harikrishnapathi" target="_blank" class="cl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><strong>GitHub</strong>github.com/harikrishnapathi</a>
     </div>
   </div>
 </section>
 
-<footer><p>Built by <a href="#">Harikrishna Pathi</a> — Full-Stack &amp; AI Developer &bull; Open to remote &copy; 2025</p></footer>
+<footer><p>Built by <a href="#">Harikrishna Pathi</a> — Full-Stack &amp; AI Developer &copy; 2025</p></footer>
 
 <script>
-// SCROLL REVEAL
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:.1});
+// REVEAL
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v');}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// KEY MANAGEMENT — stored in localStorage so visitor only enters once
+function saveKey(){
+  const k=document.getElementById('api-key-input').value.trim();
+  if(!k.startsWith('gsk_')){alert('Please enter a valid Groq key starting with gsk_');return;}
+  localStorage.setItem('groq_key',k);
+  document.getElementById('key-saved').style.display='flex';
+  document.getElementById('api-key-input').value='';
+  document.getElementById('key-setup').style.borderColor='rgba(0,229,153,.3)';
+}
+function getKey(){return localStorage.getItem('groq_key');}
+window.onload=()=>{
+  const k=getKey();
+  if(k){document.getElementById('key-saved').style.display='flex';document.getElementById('key-setup').style.borderColor='rgba(0,229,153,.3)';}
+};
 
 // TABS
 function switchTab(id,btn){
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.demo-panel').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('panel-'+id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('panel-'+id).classList.add('on');
 }
 
 // COPY
-function copyOut(id){
+function cp(id){
   navigator.clipboard.writeText(document.getElementById(id).innerText).then(()=>{
-    const btn=document.getElementById(id).previousElementSibling;
-    btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy',2000);
+    const b=document.getElementById(id).previousElementSibling;
+    b.textContent='Copied!';setTimeout(()=>b.textContent='Copy',2000);
   });
 }
 
-// SECURE API CALL — goes through /api/chat proxy, key stays on server
+// GROQ API CALL — direct from browser using visitor's own key
 async function callAI(messages,system){
-  const res=await fetch('/api/chat',{
+  const key=getKey();
+  if(!key){alert('Please enter your Groq API key in the setup box above first!');throw new Error('No key');}
+  const res=await fetch('https://api.groq.com/openai/v1/chat/completions',{
     method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({messages,system})
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '+key},
+    body:JSON.stringify({model:'llama-3.1-8b-instant',max_tokens:1000,messages:[{role:'system',content:system||'You are a helpful assistant.'},...messages]})
   });
-  if(!res.ok){const e=await res.json();throw new Error(e.error||'API error');}
   const d=await res.json();
-  return d.text;
+  if(!res.ok)throw new Error(d.error?.message||'API error');
+  return d.choices?.[0]?.message?.content||'Sorry, something went wrong.';
 }
 
 // CHATBOT
-const chatHistory=[];
-function useSugg(el){document.getElementById('chat-input').value=el.textContent;el.parentElement.style.display='none';sendChat();}
+const hist=[];
+function useS(el){document.getElementById('ci').value=el.textContent;document.getElementById('suggs').style.display='none';sendChat();}
 async function sendChat(){
-  const inp=document.getElementById('chat-input');
+  const inp=document.getElementById('ci');
   const msg=inp.value.trim();if(!msg)return;
   inp.value='';
-  const win=document.getElementById('chat-window');
-  const btn=document.getElementById('chat-send');
-  document.getElementById('chat-suggs').style.display='none';
-  win.innerHTML+=`<div class="msg user">${msg}</div><div class="msg bot thinking" id="tmsg">Thinking...</div>`;
+  const win=document.getElementById('chat-win');
+  const btn=document.getElementById('csend');
+  document.getElementById('suggs').style.display='none';
+  win.innerHTML+=`<div class="msg usr">${msg}</div><div class="msg bot think" id="tmsg">Thinking...</div>`;
   win.scrollTop=win.scrollHeight;btn.disabled=true;
-  chatHistory.push({role:'user',content:msg});
-  const sys=`You are a friendly AI assistant on Harikrishna Pathi's developer portfolio. Answer concisely and warmly.
-About Harikrishna: Full-Stack Developer & Python/AI Engineer, 2+ years remote freelance. Skills: React, Vue.js, Node.js, NestJS, Python, FastAPI, TypeScript, PostgreSQL, MongoDB, Redis, Docker, AWS, Claude API, OpenAI API. Projects: e-commerce platforms, real-time chat apps, task management APIs. Achievements: 40% API latency reduction, 99.9% uptime, 500+ concurrent users. Available immediately full-time remote. Location: Hyderabad India, flexible for US/EU hours. Email: Harikrishnapathi02@gmail.com Phone: +91 9550446819. Rates: $15-18/hr starting, negotiable for long-term. Turnaround: small 3-5 days, medium 1-2 weeks. Keep answers under 3 sentences.`;
+  hist.push({role:'user',content:msg});
+  const sys=`You are a friendly AI assistant on Harikrishna Pathi's developer portfolio. Answer concisely and warmly in under 3 sentences. About Harikrishna: Full-Stack Developer & AI Engineer, 2+ years remote freelance. Skills: React, Vue.js, Node.js, NestJS, Python, FastAPI, TypeScript, PostgreSQL, MongoDB, Redis, Docker, AWS, Groq/Claude/OpenAI APIs. Achievements: 40% API latency reduction, 99.9% uptime, 500+ concurrent users. Available immediately full-time remote. Hyderabad India, flexible for US/EU hours. Email: Harikrishnapathi02@gmail.com. Rates: $15-18/hr starting.`;
   try{
-    const reply=await callAI(chatHistory,sys);
-    chatHistory.push({role:'assistant',content:reply});
+    const r=await callAI(hist,sys);
+    hist.push({role:'assistant',content:r});
     document.getElementById('tmsg').remove();
-    win.innerHTML+=`<div class="msg bot">${reply}</div>`;
+    win.innerHTML+=`<div class="msg bot">${r}</div>`;
   }catch(e){
-    document.getElementById('tmsg').remove();
-    win.innerHTML+=`<div class="msg bot">Sorry, something went wrong. Please email Harikrishnapathi02@gmail.com directly!</div>`;
+    const t=document.getElementById('tmsg');
+    if(t)t.remove();
+    if(e.message!=='No key')win.innerHTML+=`<div class="msg bot">Sorry, something went wrong. Please email Harikrishnapathi02@gmail.com directly!</div>`;
   }
   win.scrollTop=win.scrollHeight;btn.disabled=false;
 }
 
-// CODE GENERATOR
-async function generateCode(){
-  const lang=document.getElementById('code-lang').value;
-  const prompt=document.getElementById('code-prompt').value.trim();
-  const out=document.getElementById('code-out');
-  const btn=document.getElementById('code-btn');
+// CODE GEN
+async function genCode(){
+  const lang=document.getElementById('clang').value;
+  const prompt=document.getElementById('cprompt').value.trim();
+  const out=document.getElementById('cout');
+  const btn=document.getElementById('cbtn');
   if(!prompt){out.textContent='// Please describe what you want to build.';return;}
-  btn.textContent='Generating...';btn.disabled=true;out.textContent='// Generating...';
+  btn.textContent='Generating...';btn.disabled=true;out.textContent='// Generating your code...';
   try{
-    const code=await callAI([{role:'user',content:`Write clean production-ready ${lang} code for: ${prompt}. Include brief inline comments. Return ONLY the code.`}],`You are an expert ${lang} developer. Return only clean, well-commented production code.`);
-    out.textContent=code;
-  }catch(e){out.textContent='// Error: '+e.message+'\n// Please try again.';}
+    const r=await callAI([{role:'user',content:`Write clean production-ready ${lang} code for: ${prompt}. Include brief inline comments. Return ONLY the code.`}],`You are an expert ${lang} developer. Return only clean well-commented production code.`);
+    out.textContent=r;
+  }catch(e){if(e.message!=='No key')out.textContent='// Error: '+e.message;}
   btn.textContent='Generate Code →';btn.disabled=false;
 }
 
-// PRODUCT DESCRIPTION
-async function generateProduct(){
-  const name=document.getElementById('prod-name').value.trim();
-  const cat=document.getElementById('prod-category').value.trim();
-  const feats=document.getElementById('prod-features').value.trim();
-  const tone=document.getElementById('prod-tone').value;
-  const platform=document.getElementById('prod-platform').value;
-  const out=document.getElementById('prod-out');
-  const btn=document.getElementById('prod-btn');
+// PRODUCT
+async function genProd(){
+  const name=document.getElementById('pname').value.trim();
+  const cat=document.getElementById('pcat').value.trim();
+  const feats=document.getElementById('pfeats').value.trim();
+  const tone=document.getElementById('ptone').value;
+  const plat=document.getElementById('pplat').value;
+  const out=document.getElementById('pout');
+  const btn=document.getElementById('pbtn');
   if(!name){out.style.color='var(--muted)';out.textContent='Please enter a product name.';return;}
   btn.textContent='Generating...';btn.disabled=true;out.style.color='var(--muted)';out.textContent='Writing your description...';
   try{
-    const desc=await callAI([{role:'user',content:`Write a ${tone} product description for a ${platform}.\nProduct: ${name}\nCategory: ${cat||'General'}\nFeatures: ${feats||'Not specified'}\nInclude: compelling title, description paragraph, 3-5 bullet point features.`}],'You are an expert e-commerce copywriter. Write compelling, conversion-focused product descriptions.');
-    out.style.color='var(--white)';out.textContent=desc;
-  }catch(e){out.style.color='var(--muted)';out.textContent='Error: '+e.message+'\nPlease try again.';}
+    const r=await callAI([{role:'user',content:`Write a ${tone} product description for a ${plat}.\nProduct: ${name}\nCategory: ${cat||'General'}\nFeatures: ${feats||'Not specified'}\nInclude: title, description paragraph, 3-5 bullet features.`}],'You are an expert e-commerce copywriter. Write compelling conversion-focused product descriptions.');
+    out.style.color='var(--white)';out.textContent=r;
+  }catch(e){if(e.message!=='No key'){out.style.color='var(--muted)';out.textContent='Error: '+e.message;}}
   btn.textContent='Generate Description →';btn.disabled=false;
 }
 
-// RESUME ANALYZER
-async function analyzeResume(){
-  const text=document.getElementById('resume-input').value.trim();
-  const job=document.getElementById('resume-job').value.trim();
-  const btn=document.getElementById('resume-btn');
-  const outDiv=document.getElementById('resume-out');
+// RESUME
+async function analyzeRes(){
+  const text=document.getElementById('rtxt').value.trim();
+  const job=document.getElementById('rjob').value.trim();
+  const btn=document.getElementById('rbtn');
+  const out=document.getElementById('rout');
   if(!text||text.length<50){alert('Please paste more resume text.');return;}
-  btn.textContent='Analyzing...';btn.disabled=true;outDiv.style.display='none';
+  btn.textContent='Analyzing...';btn.disabled=true;out.style.display='none';
   try{
-    const result=await callAI(
-      [{role:'user',content:`Analyze this resume for ATS${job?' for role: '+job:''}.\nResume:\n${text}\nReturn ONLY valid JSON, no markdown:\n{"score":75,"summary":"one sentence","strengths":["s1","s2","s3"],"improvements":["i1","i2","i3"],"keywords":["k1","k2","k3","k4","k5"]}`}],
-      'You are an expert ATS resume analyzer. Return only valid JSON with no markdown or backticks.'
-    );
-    let p;
-    try{p=JSON.parse(result.replace(/```json|```/g,'').trim());}
-    catch(e){p={score:70,summary:'Analysis complete.',strengths:['Good technical detail','Clear structure','Relevant experience'],improvements:['Add quantified metrics','More ATS keywords','Strengthen summary'],keywords:['JavaScript','Python','React','Node.js','API']};}
+    const r=await callAI([{role:'user',content:`Analyze this resume for ATS${job?' for role: '+job:''}.\nResume:\n${text}\nReturn ONLY valid JSON no markdown:\n{"score":75,"summary":"one sentence","strengths":["s1","s2","s3"],"improvements":["i1","i2","i3"],"keywords":["k1","k2","k3","k4","k5"]}`}],'You are an expert ATS resume analyzer. Return only valid JSON no markdown.');
+    let p;try{p=JSON.parse(r.replace(/```json|```/g,'').trim());}catch(e){p={score:70,summary:'Analysis complete.',strengths:['Good technical detail','Clear structure','Relevant experience'],improvements:['Add quantified metrics','More keywords','Stronger summary'],keywords:['JavaScript','Python','React','Node.js','API']};}
     const score=Math.min(100,Math.max(0,p.score||70));
-    document.getElementById('score-text').textContent=score+'%';
-    setTimeout(()=>document.getElementById('score-fill').style.width=score+'%',100);
+    document.getElementById('stxt').textContent=score+'%';
+    setTimeout(()=>document.getElementById('sfill').style.width=score+'%',100);
     const col=score>=80?'var(--green)':score>=60?'#FFA032':'#FF6B6B';
-    document.getElementById('score-fill').style.background=`linear-gradient(90deg,${col},${col}88)`;
-    document.getElementById('analysis-grid').innerHTML=`
-      <div class="a-item"><div class="a-label">Summary</div><div class="a-val">${p.summary||''}</div></div>
-      <div class="a-item"><div class="a-label">✅ Strengths</div><div class="a-val">${(p.strengths||[]).map(s=>'• '+s).join('<br>')}</div></div>
-      <div class="a-item"><div class="a-label">⚡ Improvements Needed</div><div class="a-val">${(p.improvements||[]).map(s=>'• '+s).join('<br>')}</div></div>
-      <div class="a-item"><div class="a-label">🔑 Keywords Detected</div><div class="a-val"><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">${(p.keywords||[]).map(k=>`<span style="background:rgba(26,92,255,.15);border:1px solid rgba(26,92,255,.3);color:#7AABFF;font-size:12px;padding:3px 10px;border-radius:100px">${k}</span>`).join('')}</div></div></div>`;
-    outDiv.style.display='block';
-  }catch(e){alert('Analysis failed: '+e.message);}
+    document.getElementById('sfill').style.background=`linear-gradient(90deg,${col},${col}88)`;
+    document.getElementById('agrid').innerHTML=`
+      <div class="ai"><div class="al">Summary</div><div class="av">${p.summary}</div></div>
+      <div class="ai"><div class="al">✅ Strengths</div><div class="av">${(p.strengths||[]).map(s=>'• '+s).join('<br>')}</div></div>
+      <div class="ai"><div class="al">⚡ Improvements</div><div class="av">${(p.improvements||[]).map(s=>'• '+s).join('<br>')}</div></div>
+      <div class="ai"><div class="al">🔑 Keywords</div><div class="av"><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">${(p.keywords||[]).map(k=>`<span style="background:rgba(26,92,255,.15);border:1px solid rgba(26,92,255,.3);color:#7AABFF;font-size:12px;padding:3px 10px;border-radius:100px">${k}</span>`).join('')}</div></div></div>`;
+    out.style.display='block';
+  }catch(e){if(e.message!=='No key')alert('Analysis failed: '+e.message);}
   btn.textContent='Analyze Resume →';btn.disabled=false;
 }
 </script>
