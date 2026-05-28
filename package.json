@@ -1,0 +1,6 @@
+{
+  "name": "harikrishna-portfolio",
+  "version": "1.0.0",
+  "description": "Harikrishna Pathi - Full-Stack & AI Developer Portfolio",
+  "engines": { "node": "18.x" }
+}
